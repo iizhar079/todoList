@@ -1,7 +1,31 @@
 .App {
   text-align: center;
-}
 
+}
+.iconImg{
+  width: 300px;
+}
+.mainDiv{
+  min-height: 100vh;
+  background-color: #060822;
+  display: flex;
+  justify-content: center;
+}
+.add-btn{
+  color: white;
+}
+.showitem{
+  
+  border: #282c34 2px solid;
+  min-height: 35px;
+  width: 236px;
+  margin-left: 39px;
+  background-color: white;
+  margin-top: 10px;
+}
+.todoIcon{
+  border-radius: 50%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
