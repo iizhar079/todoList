@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import todoIcon from "../images/download (2).png";
+import { FormControl } from "react-bootstrap";
 
 const getLocalItems = () => {
   let list = localStorage.getItem("lists");
@@ -59,6 +60,11 @@ function Todo() {
     setInputData(newEditItem.name);
     setIsEditItem(id);
   };
+  // search..............
+  const [search, setSearch] = useState("");
+  console.log(search);
+  // serach..............
+
   return (
     <>
       <div className="  mainDiv  justify-content-center  align-items-center">
@@ -67,8 +73,18 @@ function Todo() {
             <img src={todoIcon} alt="Icon" className="w-25 todoIcon" />
             <figcaption className="text-light mt-3">Add User List</figcaption>
           </figure>
+          <div className="w-75 serachDiv">
+            <inputGroup>
+              <FormControl
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Serach"
+              ></FormControl>
+            </inputGroup>
+          </div>
+          <br />
           <div className="addItem ">
-            <input className="w-75"
+            <input
+              className="w-75"
               type="text"
               placeholder="write Add Item"
               value={inputData}
@@ -85,19 +101,25 @@ function Todo() {
               </button>
             )}
           </div>
-          {items.map((elem) => {
-            return (
-              <div className="showitem w-75 " key={elem.id}>
-                <h4>{elem.name}</h4>
-                <button className="w-50 " onClick={() => editItem(elem.id)}>
-                  Edit
-                </button>
-                <button className="w-50 " onClick={() => deleteItem(elem.id)}>
-                  Delete
-                </button>
-              </div>
-            );
-          })}
+          {items
+            .filter((elem) => {
+              return search.toLowerCase() === ""
+                ? elem
+                : elem.name.toLowerCase().includes(search);
+            })
+            .map((elem) => {
+              return (
+                <div className="showitem w-75 " key={elem.id}>
+                  <h4>{elem.name}</h4>
+                  <button className="w-50 " onClick={() => editItem(elem.id)}>
+                    Edit
+                  </button>
+                  <button className="w-50 " onClick={() => deleteItem(elem.id)}>
+                    Delete
+                  </button>
+                </div>
+              );
+            })}
         </div>
       </div>
     </>
