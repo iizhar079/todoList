@@ -1,31 +1,7 @@
-.App {
+/* .App {
   text-align: center;
+}
 
-}
-.iconImg{
-  width: 300px;
-}
-.mainDiv{
-  min-height: 100vh;
-  background-color: #060822;
-  display: flex;
-  justify-content: center;
-}
-.add-btn{
-  color: white;
-}
-.showitem{
-  
-  border: #282c34 2px solid;
-  min-height: 35px;
-  width: 236px;
-  margin-left: 39px;
-  background-color: white;
-  margin-top: 10px;
-}
-.todoIcon{
-  border-radius: 50%;
-}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -59,7 +35,117 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.App {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin-top: 2rem;
 }
-.serachDiv{
-  margin-left: 40px;
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 1.1rem;
+}
+
+.form-button {
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #0077FF;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0058C7;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border-radius: 0.25rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+}
+
+.item-info > span {
+  margin-right: 1rem;
+}
+
+.item-quantity,
+.item-price {
+  margin-left: auto;
+}
+
+.item-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.edit-button,
+.delete-button {
+  padding: 0.25rem 0.5rem;
+  margin-left: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #0077FF;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #0058C7;
 }
